@@ -1,0 +1,36 @@
+<div class="w-full border-b">
+  <section class="flex flex-row items-center justify-between max-w-[80rem] h-[5rem] mx-auto px-4">
+    <div>
+      <h2 class="font-extrabold">Ecommerce Habana</h2>
+    </div>
+    <menu>
+      <ul class="flex flex-row items-center justify-center gap-6">
+        <li class="cursor-pointer"> {{'Home'}} </li>
+        <li class="cursor-pointer"> {{'Contact'}} </li>
+        <li class="cursor-pointer"> {{'About'}} </li>
+        @if (!isLoggedIn()) {
+          <li class="cursor-pointer"> {{'Sing up'}} </li>
+        }
+      </ul>
+    </menu>
+    <div class="flex flex-row items-center justify-center gap-4">
+      <div class="relative">
+        <input class="py-2.5 pl-4 pr-8 bg-gray-100 rounded-s outline-0" placeholder="Quiero comprar..."/>
+        <span class="material-icons-outlined absolute right-2 top-2 cursor-pointer">search</span>
+      </div>
+      <div class="flex flex-row items-center justify-center gap-4">
+        <button mat-icon-button>
+          <span class="material-icons-outlined btn_action" matBadge="1" matBadgeColor="warn" matBadgeSize="small">favorite_border</span>
+        </button>
+        <button mat-icon-button>
+          <span class="material-icons-outlined btn_action" matBadge="1" matBadgeColor="warn" matBadgeSize="small">shopping_cart</span>
+        </button>
+        @if (isLoggedIn()) {
+          <button mat-icon-button>
+            <span class="material-icons-outlined btn_action">person_2</span>
+          </button>
+        }
+      </div>
+    </div>
+  </section>
+</div>
